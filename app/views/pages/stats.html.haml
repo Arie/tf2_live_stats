@@ -1,0 +1,42 @@
+- content_for :head do
+  %meta{:"http-equiv" => "refresh", :content => "5"}
+  %script{:src => 'http://www.google.com/jsapi'}
+.row
+  .span10
+    - if current_round
+      %h4
+        Current round started: 
+        - minutes = (Time.now - current_round.created_at - 120) / 60.0
+        = minutes.round
+        minutes ago
+
+      .row
+        .span5
+          = render "chart", :stats_type => "damage",  :round => current_round
+        .span5
+          = render "chart", :stats_type => "kill",    :round => current_round
+
+    - rounds.each do |round|
+      .row
+        .row
+          .span3
+            &nbsp;
+          .span3
+            %h4
+              = I18n.l(round.time, :format => :time)
+              = Round.new(round).score
+        .row
+          .span5
+            = render "chart", :stats_type => "damage",  :round => round
+          .span5
+            = render "chart", :stats_type => "kill",    :round => round
+  .span7
+    %table.table.log_events.table-bordered.table-condensed
+          
+      - @relevant_log_lines.each do |log_line|
+        - if event = log_line.event
+          - event = event.decorate
+          %tr{:class => event.table_class}
+            -#%td= I18n.l(log_line.time, :format => :time)
+            %td= event.time
+            %td= event.text.html_safe

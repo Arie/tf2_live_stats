@@ -1,0 +1,9 @@
+%table.table.log_events.table-bordered.table-condensed
+      
+  - @log_lines.each do |log_line|
+    - if log_event = log_line.event
+      - event = log_event.decorate
+      %tr{:class => event.table_class}
+        -#%td= I18n.l(log_line.time, :format => :time)
+        %td= event.time
+        %td= event.text.html_safe

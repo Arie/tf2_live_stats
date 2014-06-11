@@ -1,0 +1,28 @@
+%div{"ng-controller" => "ApplicationController"}
+  %div{:style => "display:none"}
+    {{ matchId = #{params[:match_id]} }}
+    {{ timeDelay = #{params[:delay] || 90} }}
+    {{ delay = 2000 }}
+  .overlay
+    .current_round
+      - @last_or_current = "current"
+      .damage{"ng-controller" => "DamageController"}
+        %h5.title
+          This round..
+        = render "damage_overlay"
+      .kills{"ng-controller"  => "KillsController"}
+        = render "kills_overlay"
+    .last_round
+      - @last_or_current = "last"
+      .damage_per_min{"ng-controller" => "DamageController"}
+        %h5.title{"ng-controller" => "DamageController"}
+          In the last round ({{ last_round.round.duration }} min)
+        = render "damage_overlay_per_min"
+      .kills_per_hour{"ng-controller" => "KillsController"}
+        = render "kills_overlay"
+      .damage{"ng-controller" => "DamageController"}
+        %h5.title{"ng-controller" => "DamageController"}
+          In the last round ({{ last_round.round.duration }} min)
+        = render "damage_overlay"
+      .kills{"ng-controller" => "KillsController"}
+        = render "kills_overlay"

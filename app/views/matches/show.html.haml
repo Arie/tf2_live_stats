@@ -1,0 +1,30 @@
+%h2 Match
+%dl
+  %dt ip:port
+  %dd= @match.host
+  
+  - unless @match.rcon.blank?
+    %dt RCON
+    %dd ******
+  - else
+    %dt Enter this on the server
+    %dd= "rcon sv_logsecret #{@match.secret}; rcon logaddress_add fakkelbrigade.eu:20001; rcon say Live stats configured..."
+
+  %dt Lines collected
+  %dd= LogLine.count
+
+%p
+  = link_to "Live stats", stats_pages_path(:match_id => @match.id), :target => "_blank"
+%p
+  = link_to "Streamer stats", streamer_stats_pages_path(:match_id => @match.id), :target => "_blank"
+%p
+  = link_to "Damage/kills overlay", overlay_pages_path(:match_id => @match.id), :target => "_blank"
+
+:javascript
+  var message = { match_id: #{@match.id} };
+  var dispatcher = new WebSocketRails('fakkelbrigade.eu:9001/websocket');
+  dispatcher.trigger('spawn_kills', message);
+  dispatcher.bind('spawn_kills', function(kills) {
+    console.log('spawn_kills: ' + JSON.stringify(kills.stats));
+    console.log('round: ' + JSON.stringify(kills.round));
+  });

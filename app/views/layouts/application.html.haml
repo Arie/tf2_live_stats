@@ -1,0 +1,13 @@
+!!!
+%html{"ng-app" => "liveStats"}
+  %head
+    %title TF2 Live Stats
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    %link{:href=> 'http://fonts.googleapis.com/css?family=Oswald:400,700,300', :rel=>'stylesheet', :type=>'text/css'}
+    = csrf_meta_tags
+    = content_for(:head)
+
+  %body{"ng-app" => "liveStats"}
+    .container-fluid
+      = yield

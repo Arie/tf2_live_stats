@@ -1,0 +1,7 @@
+%h2 Live match stats
+= simple_form_for @match, :html => { :class => "form form-horizontal" } do |f|
+  = f.input :host, :label => "ip:port",         :hint => "IP:port of the gameserver, not STV"
+  = f.input :secret, :label => "logsecret",  :hint => "For servers that already have a logsecret"
+  = f.input :rcon, :hint => "Enter RCON to automatically configure the server, if you don't enter it, you get the commands to do it yourself"
+
+  = f.button :submit, "Save"

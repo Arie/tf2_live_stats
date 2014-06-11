@@ -1,0 +1,8 @@
+%table
+  %tr{"ng-repeat" => "player in #{@last_or_current}_round.stats"}
+    %td.player{:class => "{{player.team}}"}
+      .content
+        {{ player.player_name }}
+    %td.stat{:class => "{{player.team}}"}
+      .content
+        {{ player.value }}

@@ -1,0 +1,79 @@
+.overlay
+  position: relative
+  width: 1280px
+  height: 720px
+  background-color: #555
+  color: #fff
+  text-transform: uppercase
+  font-family: "Oswald", "AlternategothicEF",  "Helvetica", "Arial Black"
+  font-weight: 900
+  .current_round
+    left: 25px
+  .last_round
+    h5.title
+      right: 42px
+      
+  .last_round, .current_round
+    -webkit-text-stroke: 1px black
+    h1, h2, h3, h4
+      -webkit-text-stroke: 1.5px black
+    h5
+      -webkit-text-stroke: 1.5px black
+      // position: absolute
+      top: 20px
+      // right: 25px
+      font-size: 22px
+    position: absolute
+    width: 300px
+    top: 25px
+    right: 25px
+    .damage, .kills, .damage_per_min, .kills_per_hour
+      width: 307px
+      font-size: 16px
+      position: absolute
+      height: 300px
+      h3
+        font-size: 24px
+        color: white
+    .damage
+      top: 50px
+
+    .damage_per_min
+      top: 50px
+    .damage_per_min, .kills_per_hour
+      right: 400px
+
+    .kills, .kills_per_hour
+      top: 320px
+      
+    table
+      text-transform: none
+      font-size: 21px
+      font-family: "Verdana"
+      tr
+        -webkit-text-stroke: 0px rgba(153, 204, 255, 1)
+        font-weight: 200
+        width: 300px
+        height: 35px
+      td
+        text-overflow: ellipsis
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+        &.blue
+          color: rgba(153, 204, 255, 1)
+        &.red
+          color: rgba(255, 64, 64, 1)
+      td.player, td.stat
+        padding: 0
+        margin: 0
+      td.player
+        .content
+          width: 240px
+      td.stat
+        padding-left: 5px
+        padding-right: 2px
+        color: #fff
+        .content
+          width: 60px
+        text-align: right

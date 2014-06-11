@@ -1,0 +1,6 @@
+.row
+  .span5
+    .chart{:id => "round_#{stats_type}_#{round.id}", :style => "height: 250px"}
+    - klass = "#{stats_type.capitalize}Stats".constantize
+    - stats = klass.new(round)
+    = render_chart(stats.chart, "round_#{stats_type}_#{round.id}")

@@ -2,8 +2,11 @@
 
 Please read this readme and the license carefully before contacting me about this project, thanks :heart:
 
+This project is a POC that grew out of control and should've been rewritten ages ago.
+
 ## Requirements
 * Ruby 1.9+
+* Memcached
 * Database
 * Experience running Ruby/Rails apps
 

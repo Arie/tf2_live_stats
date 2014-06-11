@@ -3,6 +3,7 @@
 
 ## Requirements
 * Ruby 1.9+
+* Database
 * Experience running Ruby/Rails apps
 
 ## Installation

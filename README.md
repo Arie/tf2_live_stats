@@ -7,7 +7,7 @@
 * Experience running Ruby/Rails apps
 
 ## Installation
-Assuming you'll have experience with running Rails apps, you'll know what to do. The web part of TF2 Live Stats should run in any ruby app server or passenger.
+Assuming you have experience with running Rails apps, you'll know what to do. The web part of TF2 Live Stats should run in any ruby app server or passenger.
 
 ## Basic overview
 TF2 Live Stats consists of 2 parts. The website that displays log events and a log listener daemon, that listens for incoming log lines on a UDP port, parses them and stores them in the database.

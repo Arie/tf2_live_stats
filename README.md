@@ -1,5 +1,5 @@
 # TF2 Live Stats
-==============
+
 
 ## Requirements
 * Ruby 1.9+

@@ -1,5 +1,6 @@
 # TF2 Live Stats
 
+Please read this readme and the license carefully before contacting me about this project, thanks :heart:
 
 ## Requirements
 * Ruby 1.9+

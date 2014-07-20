@@ -7,7 +7,7 @@ set :use_sudo,          false
 set :main_server,       "fakkelbrigade.eu"
 set :keep_releases,     10
 set :deploy_via,        :copy
-set :repository,        "git@bitbucket.org:Kanarie/tf2_live_stats.git"
+set :repository,        "git@github.com:Arie/tf2_live_stats.git"
 set :branch,            'master'
 set :scm,               :git
 set :copy_compression,  :gzip

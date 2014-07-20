@@ -23,6 +23,10 @@ class PagesController < ApplicationController
     @relevant_log_lines = relevant_log_lines_for_streamer.limit(150)
   end
 
+  def external
+    render :json => ExternalStats.new(relevant_log_lines_for_streamer.limit(100)).to_json
+  end
+
   def current_damage
     render :json => DamageStats.new(current_round).to_json
   end

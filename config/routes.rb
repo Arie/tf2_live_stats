@@ -10,6 +10,7 @@ Tf2LiveStats::Application.routes.draw do
   match "/kills/current/:match_id"      => "pages#current_kills"
   match "/overlay/:match_id"            => "pages#overlay"
   match "/live/:match_id"               => "pages#public"
+  match "/external_stats/:match_id"     => "pages#external"
 
   resources :pages do
     collection do

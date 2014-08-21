@@ -6,7 +6,7 @@ GIT
 
 GIT
   remote: git://github.com/Arie/tf2_line_parser.git
-  revision: cc6444de7945b9ed5bc21fb97a8363877ca3dbde
+  revision: 7c1ccbf4c8cf2cfd27f43fce40ef66a31ffb44a2
   specs:
     tf2_line_parser (0.1.2)
       activesupport
@@ -159,7 +159,7 @@ GEM
     highline (1.6.20)
     hike (1.2.3)
     hiredis (0.4.5)
-    i18n (0.6.9)
+    i18n (0.6.11)
     journey (1.0.4)
     jquery-rails (3.1.0)
       railties (>= 3.0, < 5.0)
@@ -177,7 +177,7 @@ GEM
     method_source (0.8.2)
     mime-types (1.25.1)
     mini_portile (0.5.2)
-    multi_json (1.10.0)
+    multi_json (1.10.1)
     multi_test (0.0.3)
     multi_xml (0.5.5)
     multipart-post (1.2.0)

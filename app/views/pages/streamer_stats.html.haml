@@ -9,7 +9,7 @@
         - if event = log_line.event
           - event = event.decorate
           - if event.is_a? TF2LineParser::Events::Kill
-            - if ["knife", "sniperrifle", "awper_hand", "blutsauger", "proto_syringe", "ubersaw"].include? event.weapon
+            - if ["knife", "sniperrifle", "awper_hand", "blutsauger", "proto_syringe", "ubersaw", "crusaders_crossbow"].include? event.weapon
               %tr{:class => event.table_class}
                 -#%td= I18n.l(log_line.time, :format => :time)
                 %td= event.time

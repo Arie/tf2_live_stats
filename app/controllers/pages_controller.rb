@@ -19,7 +19,7 @@ class PagesController < ApplicationController
   end
 
   def streamer_stats
-    set_delay(70)
+    set_delay(param[:delay] || 70)
     @relevant_log_lines = relevant_log_lines_for_streamer.limit(150)
   end
 

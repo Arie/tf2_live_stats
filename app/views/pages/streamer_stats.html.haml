@@ -8,12 +8,7 @@
       - @relevant_log_lines.each do |log_line|
         - if event = log_line.event
           - event = event.decorate
-          - if event.is_a? TF2LineParser::Events::Kill && event.interesting_weapon?
-            %tr{:class => event.table_class}
-              %td= event.time
-              %td= event.text.html_safe
-          - else
-            %tr{:class => event.table_class}
-              %td= event.time
-              %td= event.text.html_safe
+          %tr{:class => event.table_class}
+            %td= event.time
+            %td= event.text.html_safe
 

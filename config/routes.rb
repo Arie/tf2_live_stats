@@ -12,6 +12,8 @@ Tf2LiveStats::Application.routes.draw do
   match "/live/:match_id"               => "pages#public"
   match "/external_stats/:match_id"     => "pages#external"
 
+  post "/cevo/match" => "cevo_matches#create"
+
   resources :pages do
     collection do
       get :log

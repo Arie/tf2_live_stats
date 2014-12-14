@@ -29,7 +29,7 @@ class TF2LineParser::Events::KillDecorator < TF2LineParser::PvpEventDecorator
     #Medic
      "blutsauger", "proto_syringe", "ubersaw", "bonesaw", "crusaders_crossbow", "syringegun_medic", "taunt_medic",
     #Sniper
-    "sniperrifle", "awper_hand", "machina", "classic", "hitman_heatmaker", "bazaar_bargain", "bushwacka", "sniperrifle_classic", "sniperrifle_decap", "taunt_sniper",
+    "sniperrifle", "awper_hand", "machina", "classic", "hitman_heatmaker", "bazaar_bargain", "bushwacka", "sniperrifle_classic", "sniperrifle_decap", "taunt_sniper", "pro_rifle",
     #Spy
     "knife", "black_rose", "spy_cicle", "voodoo_pin",
     #Multi

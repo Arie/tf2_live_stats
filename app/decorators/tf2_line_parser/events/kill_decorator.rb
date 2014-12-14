@@ -13,7 +13,9 @@ class TF2LineParser::Events::KillDecorator < TF2LineParser::PvpEventDecorator
   end
 
   def interesting_weapon?
-    ["knife", "sniperrifle", "awper_hand", "blutsauger", "proto_syringe", "ubersaw", "crusaders_crossbow", "black_rose"].include?(weapon)
+     [ "blutsauger", "proto_syringe", "ubersaw", "crusaders_crossbow",
+       "sniperrifle", "awper_hand", "machina", "classic", "hitman_heatmaker",
+       "knife", "black_rose"].include?(weapon)
   end
 
 end

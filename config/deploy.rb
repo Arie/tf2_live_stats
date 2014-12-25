@@ -13,7 +13,7 @@ set :scm,               :git
 set :copy_compression,  :gzip
 set :use_sudo,          false
 set :user,              'tf2'
-set :rvm_ruby_string,   '2.2.0'
+set :rvm_ruby_string,   '2.1.3@tf2_live_stats'
 set :rvm_type,          :system
 set :stage,             'production'
 

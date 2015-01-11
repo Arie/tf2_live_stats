@@ -21,7 +21,7 @@ class TF2LineParser::Events::KillDecorator < TF2LineParser::PvpEventDecorator
     #Pyro
     "deflect_rocket", "deflect_arrow", "deflect_promode", "fireaxe", "powerjack", "taunt_pyro",
     #Demoman
-    "ullapool_caber_explosion", "ullapool_caber", "bottle", "club",
+    "ullapool_caber_explosion", "ullapool_caber", "bottle", "club", "scotland_shard",
     #Heavy
     "steel_fists", "fists", "taunt_heavy",
     #Engineer

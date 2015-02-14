@@ -4,7 +4,7 @@ class MatchesController < ApplicationController
   before_filter :set_match_id, :only => :show
 
   def new
-    @match = Match.new
+    @match = Match.new(:host => params[:host], :secret => params[:logsecret], :rcon => params[:rcon])
   end
 
   def show

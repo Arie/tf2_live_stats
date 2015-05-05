@@ -20,7 +20,13 @@ class PagesController < ApplicationController
 
   def streamer_stats
     set_delay(params[:delay] || 70)
-    @relevant_log_lines = relevant_log_lines_for_streamer.limit(150)
+    respond_to do |format|
+      @relevant_log_lines = relevant_log_lines_for_streamer.limit(150)
+      format.html
+      format.json do
+        render :json => StatsEvent.where(:log_line_id => @relevant_log_lines.pluck(:id))
+      end
+    end
   end
 
   def external

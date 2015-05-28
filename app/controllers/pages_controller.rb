@@ -97,7 +97,7 @@ class PagesController < ApplicationController
   def irrelevant_event_types
     ["NilClass", "TF2LineParser::Events::Assist", "TF2LineParser::Events::CaptureBlock",
      "TF2LineParser::Events::Damage", "TF2LineParser::Events::Heal", "TF2LineParser::Events::PickupItem",
-     "TFLineParser::Events::Spawn", "TF2LineParser::Events::Unknown"]
+     "TF2LineParser::Events::Spawn", "TF2LineParser::Events::Unknown"]
   end
 
 end

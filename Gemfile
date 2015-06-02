@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 3.2.13'
+gem 'rails', :github => "rails/rails", :branch => "3-2-stable"
 gem 'haml'
 gem 'thin',             :require => false
 gem 'omniauth-openid'

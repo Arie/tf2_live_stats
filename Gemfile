@@ -19,6 +19,7 @@ gem 'dalli'
 gem 'turbolinks'
 gem 'eventmachine'
 gem 'websocket-rails'
+gem 'test-unit', '~> 3.0'
 
 group :development do
   gem "query_reviewer", :git => "git://github.com/nesquena/query_reviewer.git"

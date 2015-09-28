@@ -90,6 +90,7 @@ class PagesController < ApplicationController
   def relevant_event_types_for_caster
     [ "TF2LineParser::Events::ChargeDeployed",
       "TF2LineParser::Events::Airshot",
+      "TF2LineParser::Events::HeadshotDamage",
       "TF2LineParser::Events::CurrentScore", "TF2LineParser::Events::MatchEnd",
       "TF2LineParser::Events::MedicDeath",   "TF2LineParser::Events::PointCapture",
       "TF2LineParser::Events::RoundStart",   "TF2LineParser::Events::Kill", ]

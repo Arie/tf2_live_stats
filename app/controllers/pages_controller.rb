@@ -10,7 +10,7 @@ class PagesController < ApplicationController
   caches_action :public,          :cache_path => Proc.new {|c| c.request.url }, :expires_in => 5.seconds
 
   def public
-    set_delay(110)
+    set_delay(100)
     @relevant_log_lines = relevant_log_lines.limit(500)
     render "stats"
   end

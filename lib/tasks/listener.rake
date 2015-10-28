@@ -8,7 +8,7 @@ namespace :listener do
     def receive_data(data)
       log_line = ActiveSupport::Multibyte::Chars.new(data).tidy_bytes
       matches = log_line[5..-1].to_s.match('(?\'secret\'\d*)(?\'line\'.*)')
-      if matches && matches[:secret]
+      if matches && matches[:secret] && matches[:secret] != ""
         match   = find_match(matches[:secret])
         save_line(matches[:line], match, matches[:secret])
       else
@@ -17,7 +17,7 @@ namespace :listener do
     end
 
     def save_line(line, match, secret)
-      if match
+      if match && !line.match(/triggered "shot_"/)
         puts "#{match.id}: #{line}"
         LogLine.create!(:line => line, :match => match)
       else

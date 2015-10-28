@@ -17,9 +17,11 @@ namespace :listener do
     end
 
     def save_line(line, match, secret)
-      if match && !line.match(/triggered "shot_/)
+      if match
         puts "#{match.id}: #{line}"
-        LogLine.create!(:line => line, :match => match)
+        if !line.match(/triggered "shot_/)
+          LogLine.create!(:line => line, :match => match)
+        end
       else
         puts "NO MATCH FOUND FOR #{secret} - #{line}"
       end

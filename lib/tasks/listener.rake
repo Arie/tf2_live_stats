@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'tf2_line_parser'
 require 'eventmachine'
 

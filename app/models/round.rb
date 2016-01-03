@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Round
 
   attr_accessor :event, :round_start, :round_end, :delay, :match_id

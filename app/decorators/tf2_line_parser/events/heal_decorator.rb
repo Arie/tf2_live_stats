@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class TF2LineParser::Events::HealDecorator < TF2LineParser::PvpEventDecorator
 
   def text

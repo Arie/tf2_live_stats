@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class TF2LineParser::Events::HeadshotDamageDecorator < TF2LineParser::PlayerEventDecorator
 
   def crosshair_icon

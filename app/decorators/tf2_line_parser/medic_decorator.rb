@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class TF2LineParser::MedicDecorator < TF2LineParser::PlayerDecorator
 
   def name

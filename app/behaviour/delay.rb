@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Delay
 
     def self.included(mod)

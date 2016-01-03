@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class PagesController < ApplicationController
   http_basic_authenticate_with :name => "live", :password => "vtvonly", :except => :public
 

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Match < ActiveRecord::Base
 
   attr_accessible :host, :rcon, :secret

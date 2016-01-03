@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class KillStats
 
   attr_accessor :round, :max_players

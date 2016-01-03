@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class StatsEvent < ActiveRecord::Base
 
   include Delay

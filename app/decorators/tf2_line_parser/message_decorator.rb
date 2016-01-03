@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class TF2LineParser::MessageDecorator < TF2LineParser::EventDecorator
 
   def message_text

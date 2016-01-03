@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class CevoMatchesController < ApplicationController
 
   protect_from_forgery except: :create

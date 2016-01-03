@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class OverlayController < WebsocketRails::BaseController
 
   before_filter :set_delay

@@ -6,9 +6,9 @@ GIT
 
 GIT
   remote: git://github.com/Arie/tf2_line_parser.git
-  revision: 5331ef4b4bc9669f73e3822bdb210ad29897cc37
+  revision: 731e2c59036892816c27d492894560730ae5b26e
   specs:
-    tf2_line_parser (0.1.5)
+    tf2_line_parser (0.1.6)
       activesupport
 
 GIT

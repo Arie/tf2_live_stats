@@ -32,7 +32,7 @@ class TF2LineParser::Events::KillDecorator < TF2LineParser::PvpEventDecorator
     #Sniper
     "sniperrifle", "awper_hand", "machina", "classic", "hitman_heatmaker", "bazaar_bargain", "bushwacka", "sniperrifle_classic", "sniperrifle_decap", "taunt_sniper", "pro_rifle", "shooting_star",
     #Spy
-    "knife", "black_rose", "spy_cicle", "voodoo_pin",
+    "knife", "black_rose", "spy_cicle", "voodoo_pin", "big_earner",
     #Multi
     "freedom_staff", "fryingpan", "paintrain",
     ].include?(weapon)

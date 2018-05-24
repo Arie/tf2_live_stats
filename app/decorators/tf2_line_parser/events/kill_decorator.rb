@@ -16,25 +16,34 @@ class TF2LineParser::Events::KillDecorator < TF2LineParser::PvpEventDecorator
   def interesting_weapon?
     [
     #Scout
-    "bat", "bat_fish", "bat_wood", "atomizer", "ball", "boston_basher", "cleaver", "guilotine", "holy_mackerel", "sandman", "scout_sword", "warfan",
+    "bat", "atomizer", "ball", "bat_fish", "bat_wood", "batsaber", "boston_basher", "candy_cane", "cleaver", "guilotine", "holymackerel", "lava_bat", "sandman", "scout_sword", "unarmed_combat", "warfan", "wrap_assassin", "taunt_scout",
     #Soldier
-    "unique_pickaxe_escape", "shovel", "disciplinary_action", "mantreads", "market_gardener", "taunt_soldier",
+    "shovel",  "disciplinary_action", "mantreads", "market_gardener", "unique_pickaxe_escape", "unique_pickaxe", "taunt_soldier",
     #Pyro
-    "deflect_rocket", "deflect_arrow", "deflect_promode", "fireaxe", "powerjack", "taunt_pyro",
+    "fireaxe", "annihilator", "axtinguisher", "gas_blast", "hot_hand", "lava_axe", "powerjack", "mailbox", "rocketpack", "rocketpack_stomp", "sledgehammer", "the_maul", "thirddegree", "taunt_pyro",
     #Demoman
-    "ullapool_caber_explosion", "ullapool_caber", "bottle", "club", "scotland_shard",
+    "bottle", "claidheamohmor", "demoshield", "headtaker", "nessieclub", "persian_persuader", "scotland_shard", "splendid_screen", "sword", "tide_turner", "ullapool_caber_explosion", "ullapool_caber",
     #Heavy
-    "steel_fists", "fists", "taunt_heavy",
+    "fists", "apocofists", "bread_bite", "eviction_notice", "gloves", "gloves_running_urgently", "holiday_punch", "steel_fists", "warrior_spirit", "taunt_heavy",
     #Engineer
-    "mechanical_arm", "southern_hospitality", "taunt_engineer", "wrench", "wrench_jag",
+    "wrench", "eureka_effect", "mechanical_arm", "robot_arm", "southern_hospitality", "wrench_jag", "wrench_golden", "taunt_engineer", "taunt_guitar_kill",
     #Medic
-     "blutsauger", "proto_syringe", "ubersaw", "bonesaw", "crusaders_crossbow", "syringegun_medic", "taunt_medic",
+    "syringegun_medic", "bonesaw", "battleneedle", "blutsauger", "crusaders_crossbow", "proto_syringe", "solemn_vow", "ubersaw", "taunt_medic",
     #Sniper
-    "sniperrifle", "awper_hand", "machina", "classic", "hitman_heatmaker", "bazaar_bargain", "bushwacka", "sniperrifle_classic", "sniperrifle_decap", "taunt_sniper", "pro_rifle", "shooting_star",
+    "sniperrifle", "awper_hand", "bazaar_bargain", "classic", "hitman_heatmaker", "pro_rifle", "sydney_sleeper", "sniperrifle_classic", "sniperrifle_decap", "the_classic", "taunt_sniper",
+    "huntsman", "huntsman_burning", "huntsman_flyingburn", "huntsman_flyingburn_headshot", "huntsman_headshot", "tf_projectile_arrow",
+    "machina", "shooting_star", "player_penetration", "headshot_player_penetration",
+    "club", "bushwacka", "shahanshah", "tribalkukri",
     #Spy
-    "knife", "black_rose", "spy_cicle", "voodoo_pin", "big_earner",
+    "knife", "black_rose", "big_earner", "eternal_reward", "kunai", "sharp_dresser", "sharp_dresser_backstab", "spy_cicle", "voodoo_pin", "taunt_spy",
     #Multi
-    "freedom_staff", "fryingpan", "paintrain",
+    "battleaxe", "crossing_guard", "demokatana", "freedom_staff", "fryingpan", "golden_fryingpan", "ham_shank", "memory_maker", "necro_smasher", "nonnonviolent_protest", "paintrain", "prinny_machete", "saxxy", "skullbat",
+    #Bonus
+    "bleed_kill", "player", "telefrag",
+    #Reflects
+    "deflect_arrow", "deflect_ball", "deflect_flare", "deflect_huntsman_headshot", "deflect_huntsman_flyingburn", "deflect_huntsman_flyingburn_headshot", "deflect_promode", "deflect_rocket", "deflect_sticky",
+    #Environmental
+    "saw_kill", "vehicle", "world",
     ].include?(weapon)
   end
 

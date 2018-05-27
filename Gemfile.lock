@@ -198,7 +198,7 @@ GEM
     json (1.8.3)
     launchy (2.4.3)
       addressable (~> 2.3)
-    libv8 (3.16.14.13)
+    libv8 (3.16.14.19)
     logs_tf (0.0.3)
       faraday (~> 0.8.0)
       multipart-post (~> 1.2.0)
@@ -406,4 +406,4 @@ DEPENDENCIES
   websocket-rails
 
 BUNDLED WITH
-   1.11.2
+   1.16.1

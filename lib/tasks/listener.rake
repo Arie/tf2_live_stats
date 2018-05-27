@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require File.expand_path('../config/application', __FILE__)
 require 'tf2_line_parser'
 require 'eventmachine'
 

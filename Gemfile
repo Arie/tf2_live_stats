@@ -56,4 +56,5 @@ group :assets do
   gem 'bootstrap-sass', "~> 2.3"
   gem 'therubyracer', :require => 'v8'
   gem 'font-awesome-sass-rails'
+  gem 'coffee-rails'
 end

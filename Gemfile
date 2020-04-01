@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', :github => "rails/rails", :branch => "4-2-stable"
 gem 'haml'
-gem 'thin',             :require => false
+gem 'puma',             :require => false
 gem 'omniauth-openid'
 gem 'omniauth-steam'
 gem 'devise', require: false

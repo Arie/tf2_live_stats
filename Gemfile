@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rails', :github => "rails/rails", :branch => "3-2-stable"
+gem 'rails', :github => "rails/rails", :branch => "4-2-stable"
 gem 'haml'
 gem 'thin',             :require => false
 gem 'omniauth-openid'
 gem 'omniauth-steam'
-gem 'devise'
+gem 'devise', require: false
 gem 'simple_form'
 gem 'steam-condenser', :github => 'koraktor/steam-condenser-ruby'
 gem 'logs_tf'
@@ -19,7 +19,8 @@ gem 'dalli'
 gem 'turbolinks'
 gem 'eventmachine'
 gem 'websocket-rails'
-gem 'test-unit', '~> 3.0'
+gem 'protected_attributes'
+gem 'redis', '< 4.0'
 
 group :development do
   gem "query_reviewer", :git => "git://github.com/nesquena/query_reviewer.git"
@@ -31,26 +32,15 @@ group :development do
   gem 'capistrano-ext'
   gem 'capistrano_colors'
   gem 'capistrano'
-  gem 'rvm-capistrano'
+  gem 'rvm-capistrano', require: false
 end
 
 group :test, :development do
-  gem 'factory_girl_rails'
-  gem 'rspec-rails'
   gem 'pry-nav'
 end
 
 group :test_tools do
-  gem 'spec_coverage'
   gem 'fuubar'
-end
-
-group :cucumber do
-  gem 'cucumber-rails'
-  gem 'database_cleaner'
-  gem 'launchy'
-  gem 'capybara'
-  gem 'fuubar-cucumber'
 end
 
 group :assets, :test do
@@ -65,6 +55,5 @@ group :assets do
   gem 'sass-rails'
   gem 'bootstrap-sass', "~> 2.3"
   gem 'therubyracer', :require => 'v8'
-  gem 'turbo-sprockets-rails3'
   gem 'font-awesome-sass-rails'
 end

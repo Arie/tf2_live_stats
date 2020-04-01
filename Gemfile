@@ -21,6 +21,7 @@ gem 'eventmachine'
 gem 'websocket-rails'
 gem 'protected_attributes'
 gem 'redis', '< 4.0'
+gem 'jquery-rails'
 
 group :development do
   gem "query_reviewer", :git => "git://github.com/nesquena/query_reviewer.git"
@@ -43,18 +44,12 @@ group :test_tools do
   gem 'fuubar'
 end
 
-group :assets, :test do
-  gem "libv8"
-end
-
-group :assets do
-  gem 'uglifier'
-  gem 'jquery-rails'
-  gem 'compass-rails', '~> 3.0.2'
-  gem 'oily_png'
-  gem 'sass-rails'
-  gem 'bootstrap-sass', "~> 2.3"
-  gem 'therubyracer', :require => 'v8'
-  gem 'font-awesome-sass-rails'
-  gem 'coffee-rails'
-end
+gem "libv8"
+gem 'uglifier'
+gem 'compass-rails', '~> 3.0.2'
+gem 'oily_png'
+gem 'sass-rails'
+gem 'bootstrap-sass', "~> 2.3"
+gem 'therubyracer', :require => 'v8'
+gem 'font-awesome-sass-rails'
+gem 'coffee-rails'

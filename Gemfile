@@ -21,6 +21,7 @@ gem 'eventmachine'
 gem 'websocket-rails'
 gem 'protected_attributes'
 gem 'redis', '< 4.0'
+gem 'actionpack-page_caching'
 
 group :development do
   gem "query_reviewer", :git => "git://github.com/nesquena/query_reviewer.git"

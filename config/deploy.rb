@@ -8,12 +8,12 @@ set :main_server,       "fakkelbrigade.eu"
 set :keep_releases,     10
 set :deploy_via,        :copy
 set :repository,        "git@github.com:Arie/tf2_live_stats.git"
-set :branch,            'master'
+set :branch,            'rails-4-2'
 set :scm,               :git
 set :copy_compression,  :gzip
 set :use_sudo,          false
 set :user,              'tf2'
-set :rvm_ruby_string,   '2.3.0'
+set :rvm_ruby_string,   '2.4.9'
 set :rvm_type,          :system
 set :stage,             'production'
 

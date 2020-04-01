@@ -84,6 +84,8 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    actionpack-page_caching (1.1.1)
+      actionpack (>= 4.0.0, < 6)
     arel (6.0.4)
     bcrypt (3.1.13)
     better_errors (2.6.0)
@@ -309,6 +311,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionpack-page_caching
   better_errors
   binding_of_caller
   bootstrap-sass (~> 2.3)

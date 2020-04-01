@@ -50,7 +50,7 @@ end
 group :assets do
   gem 'uglifier'
   gem 'jquery-rails'
-  gem 'compass-rails'
+  gem 'compass-rails', '~> 3.0.2'
   gem 'oily_png'
   gem 'sass-rails'
   gem 'bootstrap-sass', "~> 2.3"

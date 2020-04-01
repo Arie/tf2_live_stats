@@ -3,12 +3,6 @@ class PagesController < ApplicationController
   http_basic_authenticate_with :name => "live", :password => "vtvonly", :except => :public
 
   before_filter :set_match_id
-  caches_action :stats,           :cache_path => Proc.new {|c| c.request.url }, :expires_in => 2.seconds
-  caches_action :current_damage,  :cache_path => Proc.new {|c| "#{params[:match_id].to_i}_#{params[:action]}_#{params[:delay]}" }, :expires_in => 1.second
-  caches_action :current_kills,   :cache_path => Proc.new {|c| "#{params[:match_id].to_i}_#{params[:action]}_#{params[:delay]}" }, :expires_in => 1.second
-  caches_action :last_damage,     :cache_path => Proc.new {|c| "#{params[:match_id].to_i}_#{params[:action]}_#{params[:delay]}" }, :expires_in => 1.second
-  caches_action :last_kills,      :cache_path => Proc.new {|c| "#{params[:match_id].to_i}_#{params[:action]}_#{params[:delay]}" }, :expires_in => 1.second
-  caches_action :public,          :cache_path => Proc.new {|c| c.request.url }, :expires_in => 5.seconds
 
   def public
     set_delay(100)

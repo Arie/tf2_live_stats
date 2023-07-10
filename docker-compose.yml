@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  tf2livestats:
+    container_name: 'tf2_live_stats'
+    image: ghcr.io/suprovsky/tf2_live_stats:latest
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - '127.0.0.1:3000:3000'
+      - '127.0.0.1:3001:3001'
+      - '127.0.0.1:3002:3002'
+      - '127.0.0.1:3003:3003'
+      - '127.0.0.1:9001:9001'
+      - '20001:20001/udp'
+    environment:
+      - LOG_LISTENER_ADDRESS=${LOG_LISTENER_ADDRESS}
+      - LOG_LISTENER_PORT=${LOG_LISTENER_PORT}
+      - WEB_INTERFACE_ADDRESS=${WEB_INTERFACE_ADDRESS}
+      - HTTP_USERNAME=${HTTP_USERNAME}
+      - HTTP_PASSWORD=${HTTP_PASSWORD}
+      - PUBLIC_PORT=${PUBLIC_PORT}
+      - DB_ADDRESS=${DB_ADDRESS}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - SECRET_TOKEN=${SECRET_TOKEN}
+      - COOKIE_STORE=${COOKIE_STORE}
+    volumes:
+      - tf2livestats_logs:/var/www/tf2_live_stats/log
+  db:
+    container_name: 'tf2livestats-db'
+    image: mariadb:lts
+    restart: always
+    environment:
+      - MARIADB_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+      - MARIADB_DATABASE=${DB_NAME}
+      - MARIADB_USER=${DB_USERNAME}
+      - MARIADB_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  tf2livestats_logs:
+  db_data:

@@ -24,7 +24,7 @@ gem 'redis', '< 4.0'
 gem 'jquery-rails'
 
 group :development do
-  gem "query_reviewer", :git => "git://github.com/nesquena/query_reviewer.git"
+  gem "query_reviewer", :github => "nesquena/query_reviewer"
   gem 'quiet_assets'
   gem 'better_errors'
   gem 'binding_of_caller'

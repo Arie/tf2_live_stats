@@ -4,7 +4,7 @@ require 'rvm/capistrano'
 set :application,       "tf2_live_stats"
 set :deploy_to,         "/var/www/tf2_live_stats"
 set :use_sudo,          false
-set :main_server,       "fakkelbrigade.eu"
+set :main_server,       "PUBLIC_IP"
 set :keep_releases,     10
 set :deploy_via,        :copy
 set :repository,        "git@github.com:Arie/tf2_live_stats.git"

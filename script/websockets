@@ -1,5 +1,5 @@
 #/bin/sh
-until bundle exec thin -e production -p 9001 start; do
+until bundle exec thin -e production -p PUBLIC_PORT start; do
   echo "Websocket server crashed with exit code $?.  Respawning.." >&2
   sleep 1
 done

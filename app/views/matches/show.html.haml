@@ -9,7 +9,7 @@
     %dd ******
   - else
     %dt Enter this on the server
-    %dd= "rcon sv_logsecret #{@match.secret}; rcon logaddress_add fakkelbrigade.eu:20001; rcon say Live stats configured..."
+    %dd= "rcon sv_logsecret #{@match.secret}; rcon logaddress_add LOG_LISTENER_ADDRESS:LOG_LISTENER_PORT; rcon say Live stats configured..."
 
   %dt Lines collected
   %dd= LogLine.count
@@ -23,7 +23,7 @@
 
 :javascript
   var message = { match_id: #{@match.id} };
-  var dispatcher = new WebSocketRails('fakkelbrigade.eu:9001/websocket');
+  var dispatcher = new WebSocketRails('WEB_INTERFACE_ADDRESS:9001/websocket');
   dispatcher.trigger('spawn_kills', message);
   dispatcher.bind('spawn_kills', function(kills) {
     console.log('spawn_kills: ' + JSON.stringify(kills.stats));

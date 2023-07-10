@@ -26,7 +26,7 @@ class Match < ActiveRecord::Base
     unless rcon.blank?
       console = condenser(ip, port || 27015)
       console.rcon_auth(rcon)
-      console.rcon_exec("sv_logsecret \"#{secret}\"; logaddress_add \"fakkelbrigade.eu:20001\"; say Live stats configured...; livelogs_force_logsecret 0")
+      console.rcon_exec("sv_logsecret \"#{secret}\"; logaddress_add \"LOG_LISTENER_ADDRESS:LOG_LISTENER_PORT\"; say Live stats configured...; livelogs_force_logsecret 0")
     end
   end
 

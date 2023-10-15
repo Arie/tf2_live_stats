@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails', :github => "rails/rails", :branch => "4-2-stable"
+gem 'rails', '4.2.11.1'
+gem 'rails-html-sanitizer', '1.4.0'
+gem 'loofah', '2.4.0'
 gem 'haml'
 gem 'puma',             :require => false
 gem 'omniauth-openid'
@@ -20,7 +22,8 @@ gem 'turbolinks'
 gem 'eventmachine'
 gem 'websocket-rails'
 gem 'protected_attributes'
-gem 'redis', '< 4.0'
+gem 'redis', '3.3.5'
+gem 'redis-objects', '1.3.1'
 gem 'jquery-rails'
 
 group :development do

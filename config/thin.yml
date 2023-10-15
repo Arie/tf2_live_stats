@@ -12,4 +12,4 @@ require: []
 environment: production
 max_persistent_conns: 512
 daemonize: true
-chdir: /var/www/tf2_live_stats/current
+chdir: /var/www/tf2_live_stats

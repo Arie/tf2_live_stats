@@ -23,8 +23,8 @@ jobs:
         uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
-          username: ${{ secrets.GH_LOGIN }}
-          password: ${{ secrets.GH_ACCESS }}
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GHCR_TOKEN }}
       - name: Docker meta
         id: docker_meta
         uses: docker/metadata-action@v5

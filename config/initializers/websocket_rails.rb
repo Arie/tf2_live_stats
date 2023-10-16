@@ -4,4 +4,5 @@ WebsocketRails.setup do |config|
   config.synchronize = false
   config.standalone = true
   config.standalone_port = 9001
+  config.redis_options = {:host => 'REDIS_ADDRESS', :port => 'REDIS_PORT'}
 end

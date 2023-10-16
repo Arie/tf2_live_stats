@@ -9,7 +9,7 @@ Tf2LiveStats::Application.configure do
   config.action_controller.perform_caching = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
-  config.serve_static_assets = true
+  config.serve_static_files = true
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
@@ -30,7 +30,7 @@ Tf2LiveStats::Application.configure do
   # config.force_ssl = true
 
   # See everything in the log (default is :info)
-  # config.log_level = :info
+  config.log_level = :info
 
   # Prepend all log lines with the following tags
   # config.log_tags = [ :subdomain, :uuid ]
@@ -38,7 +38,7 @@ Tf2LiveStats::Application.configure do
   # Use a different logger for distributed setups
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
-  config.cache_store = :dalli_store, 'localhost:11211',
+  config.cache_store = :dalli_store, 'MEMCACHED_ADDRESS:MEMCACHED_PORT',
     { :namespace => 'tf2_live_stats', :expires_in => 10.seconds }
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
@@ -59,4 +59,6 @@ Tf2LiveStats::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+  config.eager_load = true
 end

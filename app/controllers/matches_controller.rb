@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 class MatchesController < ApplicationController
-  http_basic_authenticate_with :name => "live", :password => "vtvonly"
+  http_basic_authenticate_with :name => "HTTP_USERNAME", :password => "HTTP_PASSWORD"
 
   before_filter :set_match_id, :only => :show
 

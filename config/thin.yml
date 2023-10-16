@@ -1,5 +1,5 @@
 ---
-address: 127.0.0.1
+address: 0.0.0.0
 pid: tmp/pids/thin.pid
 port: 3020
 timeout: 30
@@ -11,5 +11,5 @@ require: []
 
 environment: production
 max_persistent_conns: 512
-daemonize: true
-chdir: /var/www/tf2_live_stats/current
+daemonize: false
+chdir: /var/www/tf2_live_stats

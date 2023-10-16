@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  app:
+    image: ghcr.io/Arie/tf2_live_stats:latest
+    restart: always
+    depends_on:
+      - db
+      - redis
+    ports:
+      - '127.0.0.1:${PUBLIC_PORT}:${PUBLIC_PORT}/tcp'
+      - '127.0.0.1:${WEBSOCKET_PORT}:${WEBSOCKET_PORT}/tcp'
+      - '${LOG_LISTENER_PORT}:${LOG_LISTENER_PORT}/udp'
+    env_file: .env
+  db:
+    image: mariadb:lts
+    restart: always
+    env_file: .env
+    volumes:
+      - db_data:/var/lib/mysql
+  redis:
+    image: redis:7.2
+    restart: always
+    volumes:
+      - redis_data:/data
+  memcached:
+    image: memcached:latest
+    restart: always
+
+volumes:
+  db_data:
+  redis_data:

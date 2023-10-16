@@ -1,30 +1,33 @@
 source 'https://rubygems.org'
 
-gem 'rails', :github => "rails/rails", :branch => "4-2-stable"
+gem 'rails', '4.2.11.1'
+gem 'rails-html-sanitizer', '1.4.0'
+gem 'loofah', '2.4.0'
 gem 'haml'
 gem 'puma',             :require => false
 gem 'omniauth-openid'
 gem 'omniauth-steam'
 gem 'devise', require: false
 gem 'simple_form'
-gem 'steam-condenser', :github => 'koraktor/steam-condenser-ruby'
+gem 'steam-condenser', :git => 'https://github.com/koraktor/steam-condenser-ruby'
 gem 'logs_tf'
 gem 'sys-proctable',    :require => 'sys/proctable'
-gem 'tf2_line_parser',  :github => "Arie/tf2_line_parser"
+gem 'tf2_line_parser',  :git => "https://github.com/Arie/tf2_line_parser"
 gem 'draper'
 gem 'mysql2'
-gem "google_visualr",   :github => "Arie/google_visualr"
+gem "google_visualr",   :git => "https://github.com/Arie/google_visualr"
 gem 'request_store'
 gem 'dalli'
 gem 'turbolinks'
 gem 'eventmachine'
 gem 'websocket-rails'
 gem 'protected_attributes'
-gem 'redis', '< 4.0'
+gem 'redis', '3.3.5'
+gem 'redis-objects', '1.3.1'
 gem 'jquery-rails'
 
 group :development do
-  gem "query_reviewer", :git => "git://github.com/nesquena/query_reviewer.git"
+  gem "query_reviewer", :git => "https://github.com/nesquena/query_reviewer"
   gem 'quiet_assets'
   gem 'better_errors'
   gem 'binding_of_caller'

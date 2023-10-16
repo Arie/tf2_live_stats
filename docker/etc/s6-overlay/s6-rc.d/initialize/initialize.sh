@@ -21,6 +21,5 @@ cd /var/www/tf2_live_stats
 /bin/sed -ie "s/COOKIE_STORE/$COOKIE_STORE/g" config/initializers/session_store.rb
 /bin/sed -ie "s/REDIS_ADDRESS/$REDIS_ADDRESS/g" config/initializers/websocket_rails.rb
 /bin/sed -ie "s/REDIS_PORT/$REDIS_PORT/g" config/initializers/websocket_rails.rb
-printenv
-# initializing db
+/bin/echo "Initializing DB..."
 bundle exec rake db:create db:migrate db:seed

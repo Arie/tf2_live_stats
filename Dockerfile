@@ -44,4 +44,4 @@ RUN DEBUG_RESOLVER=1 bundle install --verbose && \
 
 ENTRYPOINT ["/init"]
 HEALTHCHECK --interval=15s --timeout=5s --retries=3 CMD \
-  curl --fail localhost:3020 || curl --fail localhost:3021 || curl --fail localhost:3022 || curl --fail localhost:3023 || exit 1
+  curl -u $HTTP_USERNAME:$HTTP_PASSWORD --fail localhost:3020 || exit 1

@@ -1,3 +1,4 @@
 #!/usr/bin/env sh
 with-contenv
-cd /var/www/tf2_live_stats; bundle exec thin -C /var/www/tf2_live_stats/config/thin.yml start
+cd /var/www/tf2_live_stats; bundle exec thin -R config.ru -a 0.0.0.0 -p tmp/pids/thin.pid -t 30 -w 30 -e production -l log/thin.log -c $HOME start -p 3020
+#cd /var/www/tf2_live_stats; bundle exec thin -C /var/www/tf2_live_stats/config/thin.yml start

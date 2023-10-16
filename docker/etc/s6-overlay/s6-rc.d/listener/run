@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 with-contenv
-cd /var/www/tf2_live_stats; bundle bundle exec /var/www/tf2_live_stats/script/listener
+cd /var/www/tf2_live_stats; bundle exec /var/www/tf2_live_stats/script/listener

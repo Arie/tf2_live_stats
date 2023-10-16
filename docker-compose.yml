@@ -8,12 +8,10 @@ services:
       - db
       - redis
     ports:
-      - '127.0.0.1:3020:3020'
+      - '127.0.0.1:${PUBLIC_PORT}:${PUBLIC_PORT}'
       - '127.0.0.1:9001:9001'
-      - '20001:20001/udp'
+      - '${LOG_LISTENER_PORT}:${LOG_LISTENER_PORT}/udp'
     env_file: .env
-    volumes:
-      - tf2livestats_logs:/var/www/tf2_live_stats/log
   db:
     image: mariadb:lts
     restart: always
@@ -27,6 +25,5 @@ services:
       - redis_data:/data
 
 volumes:
-  tf2livestats_logs:
   db_data:
   redis_data:

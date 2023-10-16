@@ -13,7 +13,7 @@ ENV LOG_LISTENER_PORT=20001
 ENV WEB_INTERFACE_ADDRESS=0.0.0.0
 ENV HTTP_USERNAME=vtvonly
 ENV HTTP_PASSWORD=hahasupersecretfunnypassword
-ENV PUBLIC_PORT=3000
+ENV PUBLIC_PORT=3020
 ENV DB_NAME=live_log_development
 ENV DB_ADDRESS=db
 ENV DB_USERNAME=tf2livestats
@@ -27,6 +27,12 @@ WORKDIR /var/www/tf2_live_stats
 COPY . .
 
 RUN cp -r docker/* / && \
+  mkdir /var/www/tf2_live_stats/log && \
+  ln -s /dev/stdout /var/www/tf2_live_stats/log/production.log && \
+  ln -s /dev/stdout /var/www/tf2_live_stats/log/development.log && \
+  ln -s /dev/stdout /var/www/tf2_live_stats/log/test.log && \
+  ln -s /dev/stdout /var/www/tf2_live_stats/log/thin.${PUBLIC_PORT}.log && \
+  ln -s /dev/stdout /var/www/tf2_live_stats/log/websocket_rails.log && \
   groupadd -g $GID -o $USERNAME && \
   useradd -m -d /var/www/tf2_live_stats -u $UID -g $GID -o -s /bin/bash $USERNAME && \
   chown -R $UID:$GID /var/www/tf2_live_stats
@@ -40,8 +46,8 @@ RUN tar -C / -Jxpf /tmp/s6-overlay-x86_64.tar.xz
 USER $USERNAME
 RUN DEBUG_RESOLVER=1 bundle install --verbose && \
   bundle exec rake assets:precompile
-  
+
 
 ENTRYPOINT ["/init"]
 HEALTHCHECK --interval=15s --timeout=5s --retries=3 CMD \
-  curl -u $HTTP_USERNAME:$HTTP_PASSWORD --fail localhost:3020 || exit 1
+  curl -u $HTTP_USERNAME:$HTTP_PASSWORD --fail localhost:$PUBLIC_PORT || exit 1

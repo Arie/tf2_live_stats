@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/usr/bin/with-contenv
 cd /var/www/tf2_live_stats
-#Replacing values with vars given to the container
+# replacing values with vars given to the container
 /bin/sed -ie "s/LOG_LISTENER_ADDRESS/$LOG_LISTENER_ADDRESS/g" script/listener
 /bin/sed -ie "s/LOG_LISTENER_ADDRESS/$LOG_LISTENER_ADDRESS/g" app/models/match.rb
 /bin/sed -ie "s/LOG_LISTENER_ADDRESS/$LOG_LISTENER_ADDRESS/g" app/views/matches/show.html.haml
@@ -21,9 +21,6 @@ cd /var/www/tf2_live_stats
 /bin/sed -ie "s/COOKIE_STORE/$COOKIE_STORE/g" config/initializers/session_store.rb
 /bin/sed -ie "s/REDIS_ADDRESS/$REDIS_ADDRESS/g" config/initializers/websocket_rails.rb
 /bin/sed -ie "s/REDIS_PORT/$REDIS_PORT/g" config/initializers/websocket_rails.rb
-#run only once!
-#RAILS_ENV=production bundle exec rake db:create db:migrate db:seed
-RAILS_ENV=production bundle exec rake assets:precompile
-RAILS_ENV=production bundle exec thin start -C config/thin.yml
-RAILS_ENV=production bundle exec /var/www/tf2_live_stats/script/listener
-tail -f /dev/null
+printenv
+# initializing db
+bundle exec rake db:create db:migrate db:seed

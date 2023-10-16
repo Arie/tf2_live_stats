@@ -1,3 +1,3 @@
-#!/bin/bash
-cd /var/www/tf2_live_stats
-bundle exec thin -C config/thin.yml start
+#!/usr/bin/env sh
+with-contenv
+cd /var/www/tf2_live_stats; bundle exec thin -C /var/www/tf2_live_stats/config/thin.yml start

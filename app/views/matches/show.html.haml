@@ -23,7 +23,7 @@
 
 :javascript
   var message = { match_id: #{@match.id} };
-  var dispatcher = new WebSocketRails('WEB_INTERFACE_ADDRESS:9001/websocket');
+  var dispatcher = new WebSocketRails('0.0.0.0:WEBSOCKET_PORT/websocket');
   dispatcher.trigger('spawn_kills', message);
   dispatcher.bind('spawn_kills', function(kills) {
     console.log('spawn_kills: ' + JSON.stringify(kills.stats));

@@ -38,7 +38,7 @@ Tf2LiveStats::Application.configure do
   # Use a different logger for distributed setups
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
-  config.cache_store = :dalli_store, 'localhost:11211',
+  config.cache_store = :dalli_store, 'MEMCACHED_ADDRESS:MEMCACHED_PORT',
     { :namespace => 'tf2_live_stats', :expires_in => 10.seconds }
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"

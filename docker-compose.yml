@@ -8,8 +8,8 @@ services:
       - db
       - redis
     ports:
-      - '127.0.0.1:${PUBLIC_PORT}:${PUBLIC_PORT}'
-      - '127.0.0.1:9001:9001'
+      - '127.0.0.1:${PUBLIC_PORT}:${PUBLIC_PORT}/tcp'
+      - '127.0.0.1:${WEBSOCKET_PORT}:${WEBSOCKET_PORT}/tcp'
       - '${LOG_LISTENER_PORT}:${LOG_LISTENER_PORT}/udp'
     env_file: .env
   db:
@@ -23,6 +23,9 @@ services:
     restart: always
     volumes:
       - redis_data:/data
+  memcached:
+    image: memcached:latest
+    restart: always
 
 volumes:
   db_data:

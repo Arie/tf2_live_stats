@@ -10,7 +10,7 @@ ENV BUNDLE_DEPLOYMENT=true
 ENV BUNDLE_PATH=/var/www/tf2_live_stats/vendor/bundle
 ENV LOG_LISTENER_ADDRESS=0.0.0.0
 ENV LOG_LISTENER_PORT=20001
-ENV WEB_INTERFACE_ADDRESS=0.0.0.0
+ENV WEBSOCKET_PORT=9001
 ENV HTTP_USERNAME=vtvonly
 ENV HTTP_PASSWORD=hahasupersecretfunnypassword
 ENV PUBLIC_PORT=3020
@@ -22,6 +22,8 @@ ENV SECRET_TOKEN=hahaanothersuperlongandsuperfunnypasswordwhichisverylongtrustme
 ENV COOKIE_STORE=_tf2_live_stats_session
 ENV REDIS_ADDRESS=redis
 ENV REDIS_PORT=6379
+ENV MEMCACHED_ADDRESS=memcached
+ENV MEMCACHED_PORT=11211
 
 WORKDIR /var/www/tf2_live_stats
 COPY . .

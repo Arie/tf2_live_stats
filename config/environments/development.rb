@@ -30,7 +30,7 @@ Tf2LiveStats::Application.configure do
 
   config.eager_load = false
 
-  config.cache_store = :dalli_store, 'localhost:11211',
+  config.cache_store = :dalli_store, 'MEMCACHED_ADDRESS:MEMCACHED_PORT',
     { :namespace => 'tf2_live_stats', :expires_in => 10.seconds }
   config.middleware.delete Rack::Lock
 end

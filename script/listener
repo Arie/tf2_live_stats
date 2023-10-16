@@ -1,6 +1,6 @@
 #/bin/sh
 export THREADSAFE=off
-until rake "listener:listen[LOG_LISTENER_ADDRESS,LOG_LISTENER_PORT]"; do
+until rake "listener:listen[0.0.0.0,LOG_LISTENER_PORT]"; do
   echo "Rake listener crashed with exit code $?.  Respawning.." >&2
   sleep 1
 done

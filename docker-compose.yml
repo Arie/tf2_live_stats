@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  tf2livestats:
+  app:
     image: ghcr.io/suprovsky/tf2_live_stats:latest
     restart: always
     depends_on:

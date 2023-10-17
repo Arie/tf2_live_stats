@@ -132,7 +132,7 @@ GEM
     execjs (2.7.0)
     faraday (0.17.3)
       multipart-post (>= 1.2, < 3)
-    faye-websocket (0.10.9)
+    faye-websocket (0.11.0)
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.5.1)
     ffi (1.12.2)
@@ -296,9 +296,9 @@ GEM
       execjs (>= 0.3.0, < 3)
     warden (1.2.7)
       rack (>= 1.0)
-    websocket-driver (0.7.1)
+    websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
-    websocket-extensions (0.1.4)
+    websocket-extensions (0.1.5)
     websocket-rails (0.7.0)
       em-synchrony
       faye-websocket

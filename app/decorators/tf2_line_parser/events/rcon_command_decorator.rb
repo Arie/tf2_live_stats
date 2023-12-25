@@ -8,4 +8,8 @@ class TF2LineParser::Events::RconCommandDecorator < TF2LineParser::EventDecorato
   def icon_text
     content_tag(:em, message)
   end
+
+  def text
+    message
+  end
 end

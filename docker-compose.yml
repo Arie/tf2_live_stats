@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   app:
-    image: ghcr.io/Arie/tf2_live_stats:latest
+    image: ghcr.io/arie/tf2_live_stats:latest
     restart: always
     depends_on:
       - db

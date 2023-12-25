@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-class TF2LineParser::RconCommandDecorator < TF2LineParser::EventDecorator
+class TF2LineParser::Events::RconCommandDecorator < TF2LineParser::EventDecorator
 
   def message_text
     icon('icon-comment')

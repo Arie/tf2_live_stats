@@ -6,7 +6,7 @@ class StatsEvent < ActiveRecord::Base
   attr_accessible :time, :event_type, :player_name, :player_steam_id, :player_team, :target_name
   attr_accessible :target_steam_id, :target_team, :cap_number, :cap_name, :message, :unknown
   attr_accessible :team, :score, :value, :item, :role, :length, :method, :log_line_id, :match_id
-  attr_accessible :weapon, :customkill, :healing, :ubercharge, :created_at
+  attr_accessible :weapon, :customkill, :healing, :ubercharge, :created_at, :airshot
 
   belongs_to :log_line
   belongs_to :match

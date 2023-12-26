@@ -18,6 +18,11 @@ services:
     env_file: .env
     volumes:
       - db_data:/var/lib/mysql
+    environment:
+      - MARIADB_USER=${DB_USERNAME}
+      - MARIADB_PASSWORD=${DB_PASSWORD}
+      - MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
+      - MARIADB_DATABASE=${DB_NAME}
   redis:
     image: redis:7.2
     restart: always

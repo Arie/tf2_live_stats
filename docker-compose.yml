@@ -1,9 +1,8 @@
-version: '3.8'
-
 services:
   app:
     image: ghcr.io/arie/tf2_live_stats:latest
     restart: always
+    pull_policy: always
     depends_on:
       - db
       - redis

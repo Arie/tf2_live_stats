@@ -4,8 +4,11 @@ services:
     restart: always
     pull_policy: always
     depends_on:
-      - db
-      - redis
+      db:
+        condition: service_healthy
+        restart: true
+      redis:
+        condition: service_started
     ports:
       - '127.0.0.1:${PUBLIC_PORT}:${PUBLIC_PORT}/tcp'
       - '127.0.0.1:${WEBSOCKET_PORT}:${WEBSOCKET_PORT}/tcp'
@@ -22,6 +25,11 @@ services:
       - MARIADB_PASSWORD=${DB_PASSWORD}
       - MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
       - MARIADB_DATABASE=${DB_NAME}
+    healthcheck:
+      test: ["CMD-SHELL", 'mysqladmin ping']
+      interval: 5s
+      timeout: 2s
+      retries: 10
   redis:
     image: redis:7.2
     restart: always
